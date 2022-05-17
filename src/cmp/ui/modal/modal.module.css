@@ -1,0 +1,55 @@
+.modalWindow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none; 
+    background: rgba(0, 0, 0, 0.5);  
+}
+
+.modalWindowContent {
+    background: white;
+    border-radius: 5px;
+    width: 430px;
+    height: 405px;
+}
+
+.modal__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+.modal__title {
+    height: 65px;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 20px 30px;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+.modalWindow.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__buttons{
+    display: flex;
+    gap: 10px;
+    padding: 20px 30px;
+    border-top: 1px solid #b5b5b5;
+}
+
+.select__input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}

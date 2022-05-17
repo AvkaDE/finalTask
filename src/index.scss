@@ -1,0 +1,611 @@
+$background-color: #e3e3e3;
+$text-color: #333;
+$disabled-text: #f4f4f4;
+$label-text: #ccc;
+$inner-shadow: #b5b5b5;
+$primary: #7b61ff;
+$success: #5ee48c;
+$error: #ff6161;
+$shadow: inset 0px 0px 2px 1px $inner-shadow;
+$gradient: conic-gradient(
+  from 205.35deg at 50% 50%,
+  #ff6161 0deg,
+  #7b61ff 63.75deg,
+  #ff6161 121.87deg,
+  #7b61ff 181.87deg,
+  #ff6161 245.62deg,
+  #7b61ff 301.88deg,
+  #ff6161 360deg
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html,
+body {
+  background-color: $background-color;
+  display: flex;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 300;
+}
+button {
+  height: 24px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0 20px;
+}
+
+label {
+  color: $label-text;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: auto;
+  //border-collapse: separate;
+  //border-spacing: 14px 0;
+  tr {
+    height: 64px;
+  }
+  tbody tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+  td:first-child {
+    padding-left: 30px;
+  }
+  td:last-child {
+    padding-right: 30px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  .pagination__buttons {
+    display: flex;
+    gap: 5px;
+    .page__num {
+      width: 24px;
+      padding: 0;
+      border-radius: 5px;
+      border: 1px solid #333333;
+      color: black;
+      cursor: pointer;
+      &.active {
+        border: none;
+        background: $primary;
+        color: white;
+      }
+    }
+    .cancel__button {
+      cursor: pointer;
+    }
+    button {
+      padding: 0 10px;
+    }
+  }
+}
+.avatar {
+  height: 186px;
+  width: 186px;
+  border-radius: 50%;
+  background: $gradient;
+  padding: 2px;
+}
+
+.table__wrapper {
+  padding: 2px;
+  box-shadow: $shadow;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.form__item {
+  box-shadow: inset 0px 0px 2px 1px #b5b5b5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 24px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.form__item:hover {
+  border-color: $primary;
+}
+
+.form__item:focus {
+  box-shadow: 0px 0px 2px 2px $primary;
+  outline: $primary;
+}
+
+.board {
+  min-height: 100px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 3px $inner-shadow;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+::placeholder {
+  color: $label-text;
+}
+
+.default__button {
+  border: 1px solid $text-color;
+  color: $text-color;
+  &:hover {
+    background-color: #e1e1e1;
+  }
+  &:active {
+    background-color: #cfcfcf;
+  }
+}
+
+.primary__button {
+  background-color: $primary;
+  height: 24px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 2px 20px;
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    background-color: #8a73ff;
+  }
+  &:active {
+    background-color: #715be3;
+  }
+}
+
+.success__button {
+  background-color: $success;
+  &:hover {
+    background-color: #80f0a6;
+  }
+  &:active {
+    background-color: #4bd379;
+  }
+}
+
+.cancel__button {
+  color: $text-color;
+  background-color: $disabled-text;
+  border: 1px solid $text-color;
+  border-radius: 5px;
+  text-decoration: none;
+  height: 24px;
+  padding: 2px 20px;
+  text-align: center;
+  &:hover {
+    background-color: #e1e1e1;
+  }
+  &:active {
+    background-color: #cfcfcf;
+  }
+}
+
+.delete__button {
+  background-color: $error;
+  &:hover {
+    background-color: #ff8080;
+  }
+  &:active {
+    background-color: #d65d5d;
+  }
+}
+
+.disabled__button {
+  background-color: $inner-shadow;
+  border: none;
+  color: $label-text;
+}
+
+.card__wrapper {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1280px;
+  .card__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .card__header__buttons {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  .card__board {
+    height: calc(100vh - 169px);
+    padding: 20px;
+    overflow: auto;
+  }
+}
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+.create__form {
+  height: 100%;
+  display: flex;
+  .task__info {
+    width: 300px;
+    box-sizing: content-box;
+    border-right: 1px solid $inner-shadow;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    button {
+      width: fit-content;
+    }
+  }
+  .description__container {
+    height: 100%;
+    .pagination {
+      margin-top: 15px;
+    }
+  }
+  .task__description {
+    width: 440px;
+    padding: 0 20px 0;
+    .input__description {
+      resize: none;
+      height: 100%;
+      padding-top: 5px;
+    }
+  }
+  .task__comments {
+    border-left: 1px solid $inner-shadow;
+    padding-left: 20px;
+    flex-grow: 1;
+    display: flex;
+    .comment__text {
+      height: auto;
+      resize: none;
+      padding-top: 5px;
+      width: calc(1280px - 440px - 321px - 61px);
+    }
+    button {
+      width: fit-content;
+      margin-top: 5px;
+    }
+    .comment__username {
+      display: flex;
+      justify-content: space-between;
+      a {
+        color: $error;
+      }
+    }
+  }
+}
+
+.tasks {
+  .tasks__select__type {
+    width: 98px;
+  }
+}
+
+.header {
+  background-color: #fff;
+  height: 60px;
+  min-width: 100vw;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 4px 4px $inner-shadow;
+
+  .logo {
+    margin: auto 20px;
+  }
+
+  .nav {
+    margin: auto;
+    height: 100%;
+    ul {
+      display: flex;
+      gap: 10px;
+      list-style-type: none;
+      height: 100%;
+      align-items: center;
+      li {
+        height: 100%;
+        align-items: center;
+        display: flex;
+        a {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          font-family: "Open Sans", sans-serif;
+          font-size: 24px;
+          &.active {
+            border-bottom: 2px solid $primary;
+          }
+        }
+        a:visited {
+          color: $text-color;
+        }
+        a:active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .user__profile {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+    .username {
+      margin: auto;
+    }
+    .user__menu {
+      margin: auto;
+      width: 42px;
+      height: 42px;
+      .userpic {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: $gradient;
+        padding: 1px;
+      }
+    }
+  }
+}
+.login__wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+}
+.login__form {
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+
+.tasks__filter {
+  display: flex;
+  gap: 14px;
+}
+
+.tasks__type__filter {
+  width: 98px;
+  margin: 0;
+  padding: 0;
+}
+.form__item.tasks__name__filter {
+  flex-grow: 1;
+  &.active {
+    border: #715be3;
+  }
+}
+.tasks__username__filter {
+  width: 180px;
+}
+.tasks__status__filter,
+.tasks__priority__filter {
+  width: 120px;
+}
+.table__button {
+  width: 125px;
+}
+
+.type__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.task__icon {
+  background-color: #00d1ff;
+}
+
+.error__icon {
+  background-color: $error;
+}
+
+.ellipse {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.tasks__type__table {
+  width: calc(98px + 14px);
+}
+.tasks__name__table {
+  width: calc(100% - 98px - 180px - 120px - 120px - 125px - (14px * 4));
+}
+.tasks__username__table {
+  width: calc(180px + 14px);
+}
+.tasks__status__table,
+.tasks__priority__table {
+  width: calc(120px + 14px);
+}
+.table__button__table {
+  width: 107px;
+  text-align: right;
+  .event__button {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display: block;
+    float: right;
+    cursor: pointer;
+    &.active {
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      background: #7b61ff;
+      .button-modal {
+        display: unset;
+      }
+    }
+    .button-modal {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 20;
+      background: white;
+      z-index: 1;
+      top: 20px;
+      list-style: none;
+      box-shadow: 0px 0px 2px 2px rgba(123, 97, 255, 0.5);
+      border-radius: 5px;
+      width: 105px;
+      li {
+        font-size: 12px !important;
+        text-align: left;
+        line-height: 18px;
+        padding-left: 5px;
+      }
+    }
+    svg {
+      width: 100%;
+    }
+  }
+}
+
+.main__table__wrapper {
+  height: calc(100% - 44px);
+}
+
+.dropdown {
+  display: flex;
+}
+
+.dropdown-content {
+  ul {
+    padding: 2px 0;
+  }
+  li {
+    list-style-type: none;
+    a {
+      font-size: 12px;
+      padding: 0 5px;
+      text-decoration: none;
+    }
+    .logout__link {
+      color: $error;
+    }
+  }
+  display: none;
+  position: absolute;
+  top: 51px;
+  right: 20px;
+  box-shadow: 0px 0px 2px 2px rgba(123, 97, 255, 0.5);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.users__table__wrapper {
+  height: 100%;
+}
+
+.priority {
+  margin-right: 4px;
+  margin-bottom: 1px;
+}
+
+.priority__low {
+  color: #3ca961;
+}
+
+.priority__middle {
+  color: #e9b500;
+  img {
+    margin-bottom: 2px;
+  }
+}
+
+.priority__high {
+  color: #d14343;
+}
+
+.main__table {
+  :nth-child(n + 4):nth-child(-n + 5) {
+    font-size: 14px;
+  }
+}
+
+.status {
+  padding: 2px 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.open {
+  border-color: $text-color;
+  color: $text-color;
+  background-color: $label-text;
+}
+
+.at__work {
+  border-color: #846f00;
+  color: #846f00;
+  background-color: #ffc700;
+}
+
+.done {
+  border-color: #157536;
+  color: #157536;
+  background-color: #4bd379;
+}
+
+.table__menu__icon {
+  width: 20px;
+  height: 20px;
+  padding: 4px 5px;
+}
+
+.user__tasks__wrapper {
+  padding-left: 20px;
+  width: calc(1280px - 321px - 41px);
+}

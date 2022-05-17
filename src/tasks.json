@@ -1,0 +1,38 @@
+[
+    {
+        "type" : "error",
+        "user" : "Малыш грут",
+        "status" : "open",
+        "priority" : "high",
+        "taskname" : "Задача 1 делаем дела"
+    },
+    {
+        "type" : "task",
+        "user" : "Малыш грут",
+        "status" : "at_work",
+        "priority" : "high",
+        "taskname" : "Задача 2 делаем дела"
+    },
+    {
+        "type" : "task",
+        "user" : "Малыш грут",
+        "status" : "test",
+        "priority" : "medium",
+        "taskname" : "Задача 3 делаем дела"
+    },
+    {
+        "type" : "task",
+        "user" : "Малыш грут",
+        "status" : "done",
+        "priority" : "high",
+        "taskname" : "делаем дела"
+    },
+    {
+        "type" : "error",
+        "user" : "Малыш грут",
+        "status" : "open",
+        "priority" : "low",
+        "taskname" : "Задача 1 делаем дела"
+    },
+    
+]
