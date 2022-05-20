@@ -83,6 +83,8 @@ const Create = observer(({ isEdit, id }) => {
                   params={users.map(x => ({ title: x.username, value: x.id }))}
                   str={"Выберите пользователя"}
                   value={item.assignedId}
+                  zTitle={7}
+                  zContent={6}
                   onChange={handleSelectChange}
                 />
               </div>
@@ -93,6 +95,8 @@ const Create = observer(({ isEdit, id }) => {
                   params={taskType}
                   str={"Выберите тип запроса"}
                   value={item.type}
+                  zTitle={5}
+                  zContent={4}
                   onChange={handleSelectChange}
                 />
               </div>
@@ -103,6 +107,8 @@ const Create = observer(({ isEdit, id }) => {
                   params={priorityType}
                   str={"Выберите приоритет запроса"}
                   value={item.rank}
+                  zTitle={3}
+                  zContent={2}
                   onChange={handleSelectChange}
                   />
               </div>

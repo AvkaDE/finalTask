@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./select.scss";
 
-const SelectInput = ({ name, params, str, onChange, value }) => {
+const SelectInput = ({ name, params, str, onChange, value, zTitle = 2, zContent = 1 }) => {
   const [showOptions, setShowOptions] = useState(false);
 
   function changeOption(item) {
@@ -15,11 +15,13 @@ const SelectInput = ({ name, params, str, onChange, value }) => {
     <div className="__select" data-state={showOptions ? "active" : ""}>
       <div
         className={`__select__title ${currentValue && "active"}`}
+        style={{zIndex: zTitle}}
         onClick={() => setShowOptions(!showOptions)}
       >
         {(currentValue && currentValue.title) || `${str}`}
       </div>
-      <div className="__select__content">
+      <div className="__select__content"
+      style={{zIndex: zContent}}>
         {params.map((x) => (
           <div
             key={`${name}${x.value}`}

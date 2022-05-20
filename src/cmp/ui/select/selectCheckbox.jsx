@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "./select.scss";
 
-const SelectCheckbox = ({ data, str, onChangeValues, name }) => {
+const SelectCheckbox = ({ data, str, onChangeValues, name, zTitle = 2, zContent = 1 }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [valueOption, setValueOption] = useState([]);
 
@@ -23,6 +23,7 @@ const SelectCheckbox = ({ data, str, onChangeValues, name }) => {
       <div className="__select" data-state={showOptions ? "active" : ""}>
         <div
           className={`__select__title ${valueOption.length > 0 && "active"}`}
+          style={{zIndex: zTitle}}
           onClick={() => setShowOptions(!showOptions)}
         >
           {(valueOption.length > 0 &&
@@ -31,7 +32,7 @@ const SelectCheckbox = ({ data, str, onChangeValues, name }) => {
               .join(", ")) ||
             `${str}`}
         </div>
-        <div className="__select__content">
+        <div className="__select__content" style={{zIndex: zContent}}>
           {data.map((x) => (
             <div className="checkbox" key={`multipleSelect${x.value}`}>
               <input
